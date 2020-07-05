@@ -27,10 +27,12 @@ Data_Frame_of_Summary<-as.data.frame.matrix(Summary_Of_Students_In_2018_S1_C4)#c
 
 grade_of_that_exam<-pull(Data_Frame_of_Summary, var = -1)#i am getting the last column
 View(grade_of_that_exam)
-#===================================
+#=================================== cut function to convert numeric to factor using break in range ==========
 Data_with_grade_bigger_than_5<-filter(Data,Data$grade>5)
 
-Data_with_grade_bigger_than_5$d_grade <- cut(Data_with_grade_bigger_than_5$grade, breaks = c((5.0:6.25),(6.26:7.5),(7.51:8.75),(8.76 : 10.1)),include.lowest=TRUE, 
+Data_with_grade_bigger_than_5$d_grade <- cut(Data_with_grade_bigger_than_5$grade, breaks = c(5,6.25,7.5,8.75,10.1),include.lowest=TRUE,labels = c("medium","good","very good","excellent"), 
                       right = TRUE)
+
 View(Data_with_grade_bigger_than_5)
+#================================================================================================================
 
