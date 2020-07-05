@@ -11,7 +11,7 @@ library(ISLR)
 
 
 # =====================================================================
-#                               Import the data stringsAsFactors = FALSE,read.table(filname.txt, row.names=1),headers einai ta labels
+#                               Import the data 
 # =====================================================================
 Data <- read.csv(file ="Data.csv", fileEncoding = "UTF-8-BOM", sep=",")
 View(Data)
