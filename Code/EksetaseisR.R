@@ -57,24 +57,3 @@ results<-table_data %>%
   group_by(course)%>%
   summarize(percentage_passed = sum(grade>5, na.rm = TRUE)/sum(grade,na.rm = TRUE)*100)
 View(results)
-
-
-
-
-
-
-
-
-
-
-
-grouped_with_class<-group_by(Data_with_varaiety_in_classes,Data_with_varaiety_in_classes$course)
-grouped_with_class$percetance_passed<-sum(Data_with_varaiety_in_classes$grade>5)/Data_with_varaiety_in_classes$grade 
-View(grouped_with_class)
-
-selected%>%
-  group_by(course)%>%
-  summarise(sum(selected$grade>5))%>%
-  summarise((sum(selected$grade>5)/selected$grade))%>%
-  mutate(percent_calling=selected$grade/sum(selected$grade)*100)%>%
-  select(-selected$selected$grade) # remove the sum if not required
